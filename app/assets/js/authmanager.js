@@ -16,6 +16,8 @@ const { MojangRestAPI, MojangErrorCode } = require('helios-core/mojang')
 const { MicrosoftAuth, MicrosoftErrorCode } = require('helios-core/microsoft')
 const { AZURE_CLIENT_ID }    = require('./ipcconstants')
 const Lang = require('./langloader')
+const {v3: uuidv3}  = require('uuid')
+const {machineIdSync} = require('node-machine-id')
 
 const log = LoggerUtil.getLogger('AuthManager')
 
@@ -139,31 +141,31 @@ function mojangErrorDisplayable(errorCode) {
  * @param {string} password The account password.
  * @returns {Promise.<Object>} Promise which resolves the resolved authenticated account object.
  */
-exports.addMojangAccount = async function(username, password) {
-    try {
-        const response = await MojangRestAPI.authenticate(username, password, ConfigManager.getClientToken())
-        console.log(response)
-        if(response.responseStatus === RestResponseStatus.SUCCESS) {
+exports.addAccount = async function (username, password) {
 
-            const session = response.data
-            if(session.selectedProfile != null){
-                const ret = ConfigManager.addMojangAuthAccount(session.selectedProfile.id, session.accessToken, username, session.selectedProfile.name)
-                if(ConfigManager.getClientToken() == null){
-                    ConfigManager.setClientToken(session.clientToken)
-                }
-                ConfigManager.save()
-                return ret
-            } else {
-                return Promise.reject(mojangErrorDisplayable(MojangErrorCode.ERROR_NOT_PAID))
-            }
-
-        } else {
-            return Promise.reject(mojangErrorDisplayable(response.mojangErrorCode))
+    if (password === '') {
+        const ret = ConfigManager.addAuthAccount(uuidv3(username + machineIdSync(), uuidv3.DNS), 'ImCrakedLOL', username, username)
+        if (ConfigManager.getClientToken() == null) {
+            ConfigManager.setClientToken('ImCrakedLOL')
         }
-        
-    } catch (err){
-        log.error(err)
-        return Promise.reject(mojangErrorDisplayable(MojangErrorCode.UNKNOWN))
+        ConfigManager.save()
+        return ret
+    }
+    try {
+        const session = await Mojang.authenticate(username, password, ConfigManager.getClientToken())
+        if (session.selectedProfile != null) {
+            const ret = ConfigManager.addAuthAccount(session.selectedProfile.id, session.accessToken, username, session.selectedProfile.name)
+            if (ConfigManager.getClientToken() == null) {
+                ConfigManager.setClientToken(session.clientToken)
+            }
+            ConfigManager.save()
+            return ret
+        } else {
+            throw new Error('NotPaidAccount')
+        }
+
+    } catch (err) {
+        return Promise.reject(err)
     }
 }
 

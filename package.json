@@ -1,6 +1,6 @@
 {
   "name": "sakuralauncher",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "productName": "Sakura Launcher",
   "description": "Launcher Minecraft créé pour une survie privé en 1.18.2",
   "author": "Daniel Scalzi (https://github.com/dscalzi/) + Clementino29",
@@ -42,9 +42,9 @@
     "toml": "^3.0.0"
   },
   "devDependencies": {
-    "electron": "^29.0.1",
-    "electron-builder": "^24.12.0",
-    "eslint": "^8.56.0"
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "eslint": "^8.57.0"
   },
   "repository": {
     "type": "git",

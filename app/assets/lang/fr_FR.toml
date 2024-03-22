@@ -20,11 +20,11 @@ newsErrorNoneSpan = "Aucune nouvelles (bonne nouvelle !)"
 
 [ejs.login]
 loginCancelText = "Annuler"
-loginSubheader = "Cnnection à Minecraft"
+loginSubheader = "Connection à Minecraft"
 loginEmailError = "* Saisie invalide"
 loginEmailPlaceholder = "Email ou nom d'utilisateur"
 loginPasswordError = "* Requis"
-loginPasswordPlaceholder = "Mot de passe (si crack, laissez vide)"
+loginPasswordPlaceholder = "Laissez ce champ vide (suppression prévue)"
 loginForgotPasswordLink = "https://minecraft.net/password/forgot/"
 loginForgotPasswordText = "Mot de passe oublié?"
 loginRememberMeText = "Se souvenir de moi?"
@@ -37,7 +37,7 @@ loginPasswordDisclaimer2 = "{appName} n'est pas affilié à Mojang AB."
 [ejs.loginOptions]
 loginOptionsTitle = "Options de connection"
 loginWithMicrosoft = "Compte Microsoft"
-loginWithMojang = "Compte Mojang/Crack"
+loginWithMojang = "Compte Crack"
 cancelButton = "Annuler"
 
 [ejs.overlay]
@@ -208,7 +208,7 @@ doneEnjoyServer = "Prêt. Amusez-vous bien !"
 checkConsoleForDetails = "Consultez la console (CTRL + Shift + i) pour plus de details."
 
 [js.landing.news]
-checking = "Checking for News"
+checking = "Chargement des actualités.."
 
 [js.landing.discord]
 loading = "Chargement.."

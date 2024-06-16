@@ -78,8 +78,8 @@ function resolveSelectedRAM(ram) {
 const DEFAULT_CONFIG = {
     settings: {
         game: {
-            resWidth: 1280,
-            resHeight: 720,
+            resWidth: 1366 ,
+            resHeight: 766,
             fullscreen: false,
             autoConnect: true,
             launchDetached: true
@@ -321,7 +321,7 @@ exports.getAuthAccount = function(uuid){
  * 
  * @returns {Object} The authenticated account object created by this action.
  */
-exports.updateMojangAuthAccount = function(uuid, accessToken){
+exports.updateAuthAccount = function(uuid, accessToken){
     config.authenticationDatabase[uuid].accessToken = accessToken
     config.authenticationDatabase[uuid].type = 'mojang' // For gradual conversion.
     return config.authenticationDatabase[uuid]

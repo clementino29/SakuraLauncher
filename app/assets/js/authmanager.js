@@ -152,16 +152,13 @@ exports.addAccount = async function (username, password) {
         return ret
     }
     try {
-        const session = await Mojang.authenticate(username, password, ConfigManager.getClientToken())
-        if (session.selectedProfile != null) {
-            const ret = ConfigManager.addAuthAccount(session.selectedProfile.id, session.accessToken, username, session.selectedProfile.name)
+         {
+            const ret = ConfigManager.addAuthAccount(uuidv3(username + machineIdSync(), uuidv3.DNS), 'ImCrakedLOL', username, username)
             if (ConfigManager.getClientToken() == null) {
-                ConfigManager.setClientToken(session.clientToken)
+                ConfigManager.setClientToken('ImCrakedLOL')
             }
             ConfigManager.save()
             return ret
-        } else {
-            throw new Error('NotPaidAccount')
         }
 
     } catch (err) {
@@ -275,7 +272,7 @@ exports.addMicrosoftAccount = async function(authCode) {
  * @param {string} uuid The UUID of the account to be removed.
  * @returns {Promise.<void>} Promise which resolves to void when the action is complete.
  */
-exports.removeMojangAccount = async function(uuid){
+exports.removeAccount = async function(uuid){
     try {
         const authAcc = ConfigManager.getAuthAccount(uuid)
         const response = await MojangRestAPI.invalidate(authAcc.accessToken, ConfigManager.getClientToken())
@@ -284,8 +281,9 @@ exports.removeMojangAccount = async function(uuid){
             ConfigManager.save()
             return Promise.resolve()
         } else {
-            log.error('Error while removing account', response.error)
-            return Promise.reject(response.error)
+            ConfigManager.removeAuthAccount(uuid)
+            ConfigManager.save()
+            return Promise.resolve()
         }
     } catch (err){
         log.error('Error while removing account', err)

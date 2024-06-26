@@ -937,7 +937,7 @@ document.addEventListener('keydown', (e) => {
 function displayArticle(articleObject, index){
     newsArticleTitle.innerHTML = articleObject.title
     newsArticleTitle.href = articleObject.link
-    newsArticleAuthor.innerHTML = 'by ' + articleObject.author
+    newsArticleAuthor.innerHTML = 'par ' + articleObject.author
     newsArticleDate.innerHTML = articleObject.date
     newsArticleComments.innerHTML = articleObject.comments
     newsArticleComments.href = articleObject.commentsLink
@@ -971,7 +971,7 @@ async function loadNews(){
         $.ajax({
             url: newsFeed,
             success: (data) => {
-                const items = $(data).find('entry')
+                const items = $(data).find('item')
                 const articles = []
 
                 for(let i=0; i<items.length; i++){
@@ -979,23 +979,23 @@ async function loadNews(){
                     const el = $(items[i])
 
                     // Resolve date.
-                    const date = new Date(el.find('published').text()).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
+                    const date = new Date(el.find('pubDate').text()).toLocaleDateString('fr-FR', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
 
                     // Resolve comments.
                     let comments = el.find('slash\\:comments').text() || '0'
                     comments = comments + ' Comment' + (comments === '1' ? '' : 's')
 
                     // Fix relative links in content.
-                    let content = el.find('summary').text()
+                    let content = el.find('content').text()
                     let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
                     let matches
                     while((matches = regex.exec(content))){
                         content = content.replace(`"${matches[1]}"`, `"${newsHost + matches[1]}"`)
                     }
 
-                    let link   = el.find('id').text()
+                    let link   = el.find('link').text()
                     let title  = el.find('title').text()
-                    let author = el.find('name').text()
+                    let author = el.find('creator').text()
 
                     // Generate article.
                     articles.push(

@@ -14,6 +14,7 @@ const SHADER_OPTION = /shaderPack=(.+)/
 const SHADER_DIR = 'shaderpacks'
 const SHADER_CONFIG = 'optionsshaders.txt'
 
+var PropertiesReader = require('properties-reader');
 /**
  * Validate that the given directory exists. If not, it is
  * created.
@@ -181,10 +182,33 @@ exports.scanForShaderpacks = function(instanceDir){
  * 
  * @returns {string} The file name of the enabled shaderpack.
  */
+
+
+
 exports.getEnabledShaderpack = function(instanceDir){
     exports.validateDir(instanceDir)
 
+    if(fs.existsSync(instanceDir + "/config")){
+       } else {fs.mkdir(instanceDir + "/config")
+        console.log("creating config directory...")}
+    
+    if(fs.existsSync( instanceDir + "/config/iris.properties")){         
+    } else {console.log("No Iris proprety file detected... creating one...")
+        const content = 'colorSpace=SRGB\ndisableUpdateMessage=false\nenableDebugOptions=false\nmaxShadowRenderDistance=32\nshaderPack=OFF\nenableShaders=true'
+        fs.writeFile(instanceDir + "/config/iris.properties", content)
+
+    }
+    if(fs.existsSync( instanceDir + "/config/oculus.properties")){ 
+    } else {console.log("No Oculus proprety file detected... creating one...")
+        const content = 'colorSpace=SRGB\ndisableUpdateMessage=false\nenableDebugOptions=false\nmaxShadowRenderDistance=32\nshaderPack=OFF\nenableShaders=true'
+        fs.writeFile(instanceDir + "/config/oculus.properties", content)}
+
     const optionsShaders = path.join(instanceDir, SHADER_CONFIG)
+  
+    if(fs.existsSync(optionsShaders)){} else {
+        buf = `shaderPack=OFF`
+         fs.writeFileSync(optionsShaders, buf, {encoding: 'utf-8'})}
+
     if(fs.existsSync(optionsShaders)){
         const buf = fs.readFileSync(optionsShaders, {encoding: 'utf-8'})
         const match = SHADER_OPTION.exec(buf)
@@ -195,6 +219,8 @@ exports.getEnabledShaderpack = function(instanceDir){
         }
     }
     return 'OFF'
+    
+
 }
 
 /**
@@ -204,13 +230,33 @@ exports.getEnabledShaderpack = function(instanceDir){
  * @param {string} pack the file name of the shaderpack.
  */
 exports.setEnabledShaderpack = function(instanceDir, pack){
-    exports.validateDir(instanceDir)
-
+    exports.validateDir(instanceDir )
+    
     const optionsShaders = path.join(instanceDir, SHADER_CONFIG)
     let buf
     if(fs.existsSync(optionsShaders)){
         buf = fs.readFileSync(optionsShaders, {encoding: 'utf-8'})
         buf = buf.replace(SHADER_OPTION, `shaderPack=${pack}`)
+       
+            let shaderPropPath = instanceDir + "/config/oculus.properties";
+            const propertiesPath = shaderPropPath
+            const writer = PropertiesReader(propertiesPath, { writer: { saveSections: true } });
+            console.log(writer.get("shaderPack"));
+            writer.set("shaderPack", pack)
+            writer.save(shaderPropPath)
+            writer.each((key, value) => {
+                console.log(key + ":" + value);
+            });
+        
+            let IrisShaderPath = instanceDir + "/config/iris.properties"
+            const propertiesPathI = IrisShaderPath
+            const writerI = PropertiesReader(propertiesPathI, { writer: { saveSections: true } });
+            console.log(writer.get("shaderPack"))
+            writerI.set("shaderPack", pack)
+            writerI.save(IrisShaderPath)
+            writerI.each((key, value) => {
+            console.log(key + ":" + value)});
+
     } else {
         buf = `shaderPack=${pack}`
     }

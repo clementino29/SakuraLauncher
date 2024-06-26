@@ -13,7 +13,7 @@
                  </ul>
                  <p>Dans ces deux cas, il suffit juste de relancer le jeu en cliquand sur "Jouer"</p>
             </content>
-            <dc:creator>Organisateurs</dc:creator>
+            <creator>Organisateurs</creator>
             <pubDate>25 June 2024</pubDate>
         </item>
         <item>
@@ -22,7 +22,7 @@
                 <p> La survie minecraft moddée en 1.18.2 débutera le Mardi 2 juillet au soir ! </p> <p> Toute l'équipe d'organisation de la survie est impatiente de lancer cette aventure à vos coté ! </p> 
                 <p> En attendant, vous pouvez toujours rejoindre le discord si ce n'est pas fait : <a href="https://discord.gg/Jg5uNTWxa4"> Lien vers le serveur discord </a>. C'est ici que seront postée toutes les anonces en lien avec la survie et d'où vous pourrez signlaer tout problème d'ordre technique ou autres </p>
             </content>
-            <dc:creator>Organisateurs</dc:creator>
+            <creator>Organisateurs</creator>
             <pubDate>25 June 2024</pubDate>
         </item>
         <item>
@@ -30,7 +30,7 @@
             <content>
                 <p>Nous vous remercions d'avoir télécharger le Sakura Launcher !</p> <p></p>
             </content>
-            <dc:creator>@clementino29</dc:creator>
+            <creator>@clementino29</creator>
             <pubDate>25 june 2024</pubDate>
         </item>
     </channel>

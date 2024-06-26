@@ -4,33 +4,28 @@
         <link>https://discord.gg/Jg5uNTWxa4</link>
         <item>
             <title>Problèmes courant</title>
-            <content:encoded>
-                <p>Lors du lancement d'une des versions, dont le survie, il est possible que vous rencontriez quelques problèmes techniques. Ils sont parfaitement connus, récurents mais ne generont pas votre experience de jeu.</p> 
-                <p>En voici la liste:</p>
-                 <ul> 
-                    <li><i>Erreur 509 lors du téléchargement des fichiers</i>: Cela signifie simplement que le launcher n'a pas reussi à télécharger tous les fichiers</li>
-                    <li><i>Le jeu plante au lancment</i>: Il est fort probable, même certain, que ce vienne d'une texture de cochon. N'hésiter pas à aller vérifier le crash report qui se trouve dans le dossier <i>.sakuralauncher</i></li>  
-                 </ul>
-                 <p>Dans ces deux cas, il suffit juste de relancer le jeu en cliquand sur "Jouer"</p>
-            </content:encoded>
-            <dc:creator>Organisateurs</dc:creator>
+            <content>
+                <p>Lors du lancement d'une des versions, dont le survie, il est possible que vous rencontriez quelques problèmes techniques. Il est possible que, lors du téléchargement, le launcher vous affiche une "erreur 509" ou que le jeu crash au lancement.</p> 
+                 <p>Dans ces deux cas, il suffit juste de relancer le jeu en cliquant sur "Jouer". Si vous rencontrez d'autres problèmes, n'hésitez pas à les signaler sur le serveur discord !</p>
+            </content>
+            <creator>Organisateurs</creator>
             <pubDate>25 June 2024</pubDate>
         </item>
         <item>
             <title>Lancement de la survie modee 2024</title>
-            <content:encoded>
+            <content>
                 <p> La survie minecraft moddée en 1.18.2 débutera le Mardi 2 juillet au soir ! </p> <p> Toute l'équipe d'organisation de la survie est impatiente de lancer cette aventure à vos coté ! </p> 
-                <p> En attendant, vous pouvez toujours rejoindre le discord si ce n'est pas fait : <a href="https://discord.gg/Jg5uNTWxa4"> Lien vers le serveur discord </a>. C'est ici que seront postée toutes les anonces en lien avec la survie et d'où vous pourrez signlaer tout problème d'ordre technique ou autres </p>
-            </content:encoded>
-            <dc:creator>Organisateurs</dc:creator>
+                <p> En attendant, vous pouvez toujours rejoindre le discord si ce n'est pas fait : <a href="https://discord.gg/Jg5uNTWxa4"> Lien vers le serveur discord </a>. </p>
+            </content>
+            <creator>Organisateurs</creator>
             <pubDate>25 June 2024</pubDate>
         </item>
         <item>
             <title>Bienvenue sur le Sakura Launcher</title>
-            <content:encoded>
-                <p>Nous vous remercions d'avoir télécharger le Sakura Launcher !</p> <p></p>
-            </content:encoded>
-            <dc:creator>@clementino29</dc:creator>
+            <content>
+                <p>Nous vous remercions d'avoir télécharger le Sakura Launcher !</p>
+            </content>
+            <creator>@clementino29</creator>
             <pubDate>25 june 2024</pubDate>
         </item>
     </channel>

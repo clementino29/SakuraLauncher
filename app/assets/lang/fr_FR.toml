@@ -212,8 +212,9 @@ checking = "Chargement des actualités.."
 
 [js.landing.discord]
 loading = "Chargement.."
-joining = "En jeu - Dans les menus"
-joined = "En jeu - Connecté"
+joining = "Dans les menus"
+joined = "En jeu - Multijoueur"
+solo = "En jeu - Solo"
 
 [js.overlay]
 dismiss = "Fermer"

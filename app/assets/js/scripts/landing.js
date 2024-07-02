@@ -558,7 +558,12 @@ async function dlAsync(login = true) {
         setLaunchDetails(Lang.queryJS('landing.dlAsync.launchingGame'))
 
         // const SERVER_JOINED_REGEX = /\[.+\]: \[CHAT\] [a-zA-Z0-9_]{1,16} joined the game/
-        const SERVER_JOINED_REGEX = new RegExp(`\\[.+\\]: \\[CHAT\\] ${authUser.displayName} joined the game`)
+        const SERVER_JOINED_REGEX = new RegExp(`\\[.+\\]: Connecting to`)
+
+        const SOLO_JOINED_REGEX = new RegExp('\\[.+\\]: Preparing start region for')
+        const SOLO_EXIT_REGEX = new RegExp('\\[.+\\]: Stopping singleplayer server as player logged out')
+
+        const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
         const onLoadComplete = () => {
             toggleLaunchArea(false)
@@ -594,6 +599,16 @@ async function dlAsync(login = true) {
             } else if(GAME_JOINED_REGEX.test(data)){
                 DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.joining'))
             }
+            if(SOLO_JOINED_REGEX.test(data)){
+                DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.solo'))
+            } else if(GAME_JOINED_REGEX.test(data)){
+                DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.joining'))
+            }
+            if(SOLO_EXIT_REGEX.test(data)){
+                DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.joining'))
+            }         
+            
+
         }
 
         const gameErrorListener = function(data){

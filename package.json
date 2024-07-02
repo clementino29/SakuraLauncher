@@ -1,6 +1,6 @@
 {
   "name": "sakuralauncher",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "productName": "Sakura Launcher",
   "description": "Launcher Minecraft créé pour une survie privé en 1.18.2",
   "author": "Daniel Scalzi (https://github.com/dscalzi/) + Clementino29 (https://github.com/clementino29/)",
@@ -24,15 +24,15 @@
   },
   "dependencies": {
     "@electron/remote": "^2.1.2",
-    "adm-zip": "^0.5.9",
+    "adm-zip": "^0.5.12",
     "discord-rpc-patch": "^4.0.1",
-    "ejs": "^3.1.9",
+    "ejs": "^3.1.10",
     "ejs-electron": "^3.0.0",
     "electron-updater": "^6.1.8",
     "fs-extra": "^11.1.1",
     "github-syntax-dark": "^0.5.0",
     "got": "^11.8.5",
-    "helios-core": "~2.2.0",
+    "helios-core": "~2.2.1",
     "helios-distribution-types": "^1.3.0",
     "java-properties": "^1.0.2",
     "jquery": "^3.7.1",
@@ -44,7 +44,7 @@
     "uuid": "^8.1.0"
   },
   "devDependencies": {
-    "electron": "^29.1.0",
+    "electron": "^30.0.1",
     "electron-builder": "^24.13.3",
     "eslint": "^8.57.0"
   },

@@ -2459,29 +2459,29 @@ input:checked + .toggleSwitchSlider:before {
     position: relative;
     transition: top 2s ease;
     top: 0px;
-    height: 77%;
+    height: 85%;
     display: flex;
 }
 #landingContainer > #upper > #left {
     display: inline-flex;
-    width: 15%;
+    width: 10%;
     height: 100%;
     justify-content: flex-end;
 }
 #landingContainer > #upper > #content {
     display: inline-flex;
-    width: 70%;
+    width: 80%;
     height: 100%;
 }
 #landingContainer > #upper > #right {
     display: inline-flex;
-    width: 15%;
+    width: 10%;
     height: 100%;
 }
 
 /* Lower content container. */
 #landingContainer > #lower {
-    height: 23%;
+    height: 15%;
     display: flex;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
@@ -2490,7 +2490,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: top 2s ease;
     top: 0px;
     height: 100%;
-    width: 33%;
+    width: 30%;
     display: inline-flex;
     justify-content: center;
 }
@@ -2506,7 +2506,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: top 2s ease;
     top: 0px;
     height: 100%;
-    width: 34%;
+    width: 40%;
     display: inline-flex;
     justify-content: center;
 }
@@ -2521,7 +2521,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: top 2s ease;
     top: 0px;
     height: 100%;
-    width: 33%;
+    width: 30%;
     display: inline-flex;
 }
 

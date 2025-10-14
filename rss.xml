@@ -3,24 +3,6 @@
         <title>Minecraft - Sakura Launcher</title>
         <link>https://discord.gg/Jg5uNTWxa4</link>
         <item>
-            <title>Problèmes courant</title>
-            <content>
-                <p>Lors du lancement d'une des versions, dont le survie, il est possible que vous rencontriez quelques problèmes techniques. Il est possible que, lors du téléchargement, le launcher vous affiche une "erreur 509" ou que le jeu crash au lancement.</p> 
-                 <p>Dans ces deux cas, il suffit juste de relancer le jeu en cliquant sur "Jouer". Si vous rencontrez d'autres problèmes, n'hésitez pas à les signaler sur le serveur discord !</p>
-            </content>
-            <creator>Organisateurs</creator>
-            <pubDate>25 June 2024</pubDate>
-        </item>
-        <item>
-            <title>Lancement de la survie modee 2024</title>
-            <content>
-                <p> La survie minecraft moddée en 1.18.2 débutera le Mardi 2 juillet au soir ! </p> <p> Toute l'équipe d'organisation de la survie est impatiente de lancer cette aventure à vos coté ! </p> 
-                <p> En attendant, vous pouvez toujours rejoindre le discord si ce n'est pas fait : <a href="https://discord.gg/Jg5uNTWxa4"> Lien vers le serveur discord </a>. </p>
-            </content>
-            <creator>Organisateurs</creator>
-            <pubDate>25 June 2024</pubDate>
-        </item>
-        <item>
             <title>Bienvenue sur le Sakura Launcher</title>
             <content>
                 <p>Nous vous remercions d'avoir télécharger le Sakura Launcher !</p>
@@ -30,3 +12,4 @@
         </item>
     </channel>
 </rss>
+

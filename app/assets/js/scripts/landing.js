@@ -690,7 +690,7 @@ function slide_(up){
         lCLLeft.style.top = '-200vh'
         lCLCenter.style.top = '-200vh'
         lCLRight.style.top = '-200vh'
-        newsBtn.style.top = '130vh'
+        newsBtn.style.top = '120vh'
         newsContainer.style.top = '0px'
         //date.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
         //landingContainer.style.background = 'rgba(29, 29, 29, 0.55)'
@@ -714,7 +714,7 @@ function slide_(up){
         lCLLeft.style.top = '0px'
         lCLCenter.style.top = '0px'
         lCLRight.style.top = '0px'
-        newsBtn.style.top = '10px'
+        newsBtn.style.top = '-15px'
     }
 }
 

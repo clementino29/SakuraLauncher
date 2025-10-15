@@ -1054,7 +1054,7 @@ body, button {
     position: relative;
     height: 100%;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.50);
+    background-color: rgba(0, 0, 0, 0.55);
     transition: background-color 0.25s cubic-bezier(.02, .01, .47, 1);
 }
 
@@ -1124,6 +1124,7 @@ body, button {
     cursor: pointer;
     outline: none;
     transition: 0.25s ease;
+    font-size: 15;
 }
 .settingsNavItem:hover,
 .settingsNavItem:focus {
@@ -1167,6 +1168,7 @@ body, button {
     cursor: pointer;
     outline: none;
     transition: 0.25s ease;
+    font-size: 15;
 }
 #settingsNavDone:hover,
 #settingsNavDone:focus {
@@ -2466,7 +2468,7 @@ input:checked + .toggleSwitchSlider:before {
     display: inline-flex;
     width: 10%;
     height: 100%;
-    justify-content: flex-end;
+    justify-content: center;
 }
 #landingContainer > #upper > #content {
     display: inline-flex;
@@ -2477,6 +2479,8 @@ input:checked + .toggleSwitchSlider:before {
     display: inline-flex;
     width: 10%;
     height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /* Lower content container. */
@@ -2492,14 +2496,13 @@ input:checked + .toggleSwitchSlider:before {
     height: 100%;
     width: 30%;
     display: inline-flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 #landingContainer > #lower > #left #content {
     position: relative;
-    top: 25px;
     display: inline-flex;
     line-height: 24px;
-    left: 50px;
 }
 #landingContainer > #lower > #center {
     position: relative;
@@ -2508,13 +2511,14 @@ input:checked + .toggleSwitchSlider:before {
     height: 100%;
     width: 40%;
     display: inline-flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 #landingContainer > #lower > #center #content {
     position: relative;
     z-index: 500;
     transition: top 2s ease;
-    top: 10px;
+    top: -15px;
 }
 #landingContainer > #lower > #right {
     position: relative;
@@ -2523,6 +2527,8 @@ input:checked + .toggleSwitchSlider:before {
     height: 100%;
     width: 30%;
     display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /*******************************************************************************
@@ -2955,7 +2961,7 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 50px;
+    top: 25px;
     align-items: flex-start;
     height: calc(100% - 50px);
 }
@@ -3182,7 +3188,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Style for a general label on the bottom of the landing view. */
 .bot_label {
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 1px;
     font-weight: bold;
     text-shadow: 0px 0px 0px #bebcbb;
@@ -3210,7 +3216,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Span which displays the player count of the selected server. */
 #player_count {
     color: #949494;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 900;
     text-shadow: 0px 0px 20px #949494;
     margin-left: 10px;
@@ -3244,7 +3250,7 @@ input:checked + .toggleSwitchSlider:before {
     padding: 5px 10px;
     z-index: 1;
     font-family: 'Avenir Medium';
-    font-size: 13px;
+    font-size: 12px;
     transition: visibility 0s linear 0.25s, opacity 0.25s ease;
     bottom: calc(100% + 15px);
     transform: translateX(-50%);
@@ -3292,7 +3298,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Non essential service title text. */
 #mojangStatusNETitle {
-    font-size: 11px;
+    font-size: 10px;
     padding: 0px 3px;
     text-align: center;
     letter-spacing: 1px;
@@ -3377,7 +3383,6 @@ input:checked + .toggleSwitchSlider:before {
     font-weight: 900;
     letter-spacing: 2px;
     text-shadow: 0px 0px 0px #bebcbb;
-    font-size: 12px;
     line-height: 30px;
     display: flex;
     transition: 0.25s ease;
@@ -3390,7 +3395,6 @@ input:checked + .toggleSwitchSlider:before {
 /* Main launch content container. */
 #landingContainer > #lower > #right #launch_content {
     position: relative;
-    top: 25px;
     display: inline-flex;
 }
 
@@ -3402,7 +3406,7 @@ input:checked + .toggleSwitchSlider:before {
     font-weight: 900;
     letter-spacing: 2px;
     text-shadow: 0px 0px 0px #bebcbb;
-    font-size: 21px;
+    font-size: 22px;
     padding: 0px;
     transition: 0.25s ease;
     outline: none;
@@ -3424,7 +3428,6 @@ input:checked + .toggleSwitchSlider:before {
 /* Launch details main container, hidden until launch processing begins. */
 #launch_details {
     position: relative;
-    top: 25px;
     display: none;
 }
  
